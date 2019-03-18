@@ -28,13 +28,15 @@
  * THE SOFTWARE.
  */
 
-import UIKit
+import ReSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   var appRouter: AppRouter?
+
+  var store = Store<AppState>(reducer: appReducer, state: nil)
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
