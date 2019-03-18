@@ -50,6 +50,18 @@ final class MenuTableViewController: UITableViewController {
     // 3
     store.unsubscribe(self)
   }
+
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    var routeDestination: RoutingDestination = .categories
+    switch(indexPath.row) {
+    case 0: routeDestination = .game
+    case 1: routeDestination = .categories
+    default: break
+    }
+
+    store.dispatch(RoutingAction(destination: routeDestination))
+  }
+
 }
 
 // MARK: - StoreSubscriber
