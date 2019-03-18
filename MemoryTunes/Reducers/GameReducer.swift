@@ -27,3 +27,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
+import ReSwift
+
+func gameReducer(action: Action, state: GameState?) -> GameState {
+  let state = state ?? GameState(memoryCards: [], showLoading: false, gameFinished: false)
+  
+  return state
+}
