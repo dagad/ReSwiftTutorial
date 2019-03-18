@@ -28,3 +28,8 @@
  * THE SOFTWARE.
  */
 
+import ReSwift
+
+struct AppState: StateType {
+
+}
