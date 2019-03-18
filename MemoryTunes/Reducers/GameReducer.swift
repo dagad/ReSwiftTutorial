@@ -41,6 +41,10 @@ func gameReducer(action: Action, state: GameState?) -> GameState {
   case let setCardsAction as SetCardsAction:
     state.memoryCards = generateNewCards(with: setCardsAction.cardImageUrls)
     state.showLoading = false
+  case let flipCardAction as FlipCardAction:
+    state.memoryCards = flipCard(index: flipCardAction.cardIndexToFlip, memoryCards: state.memoryCards)
+    state.gameFinished = hasFinishedGame(cards: state.memoryCards)
+
   default: break
   }
   
